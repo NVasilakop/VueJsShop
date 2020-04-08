@@ -1,5 +1,13 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+  <!-- <button type="button" class="btn-alert" @click="reroute()">Go Home</button> -->
+  <router-link to="/" tag="button">Home</router-link>
   </div>
 </template>
+
+<script>
+export default {
+  
+}
+
+</script>
