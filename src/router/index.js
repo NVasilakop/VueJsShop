@@ -24,6 +24,7 @@ Vue.use(VueRouter)
     name: 'ProductsCatalog',
     component:ProductsCatalog
   }
+  
 ]
 
 const router = new VueRouter({
