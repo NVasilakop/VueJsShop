@@ -5,8 +5,28 @@
   <li v-for="product in products" :key="product.id">
     {{ product.name }}
   </li>
-</ul> -->
-<Product v-for="product in products" :product="product" :key="product.id"/>
+</ul> --><div class="container">
+  <h2>Bootstrap 4 Table with caption</h2>
+ <button class="btn btn-alert">Click Me</button>
+<table class="table table-striped table-hover table-bordered">
+<caption>Product Warehouse</caption>
+  <thead>
+    <tr>
+      <th scope="col">Month</th>
+      <th scope="col">Number of Sales</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody v-for="product in products" :product="product" :key="product.id">
+    <tr>
+      <th scope="row">{{product.name}}</th>
+      <td></td>
+      <td>{{product.price}}</td>
+    </tr>
+     </tbody>
+</table>
+</div>
+<!-- <Product v-for="product in products" :product="product" :key="product.id"/> -->
  <button @click="addProduct">
    Add Product
  </button>
@@ -16,8 +36,9 @@
 
 <script>
 import HelloWorld from '@/components/HelloWorld.vue'
-import Product from '@/components/Product.vue'
+// import Product from '@/components/Product.vue'
 import AddProduct from '@/components/AddProduct.vue'
+import retrieveProducts from '@/common/fake-db.js'
 
 export default {
     name:'ProductsCatalog',
@@ -25,7 +46,7 @@ export default {
     },
     components: {
       'Helloworld': HelloWorld,
-      'Product': Product,
+      // 'Product': Product,
       'AddProduct': AddProduct
       },
     // props:{
@@ -39,10 +60,7 @@ export default {
    data(){
      return {
     addProductFlag:false,
-    products:[{id:1,name:'Cheese',price:10},
-    {id:2,name:'Ham',price:6},
-    {id:3,name:'Burger',price:4}
-     ]
+    products:retrieveProducts()
    }
       }}
 </script>
