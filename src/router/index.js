@@ -2,8 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import ProductsCatalog from '../components/ProductsCatalog.vue'
+import BootStrapVue from '../../node_modules/bootstrap-vue/dist/bootstrap-vue.esm'
 
 Vue.use(VueRouter)
+Vue.use(BootStrapVue)
 
   const routes = [
   {
